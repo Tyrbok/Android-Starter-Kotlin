@@ -8,12 +8,11 @@ import org.onepointzero.androidstarterkotlin.support.di.DaggerAppComponent
 
 class Bootstrap : Application() {
 
-    val component: AppComponent by lazy {
-        DaggerAppComponent
-                .builder()
-                .appModule(AppModule(this))
-                .build()
-    }
+    var component: AppComponent =
+            DaggerAppComponent
+                    .builder()
+                    .appModule(AppModule(this))
+                    .build()
 
     override fun onCreate() {
         super.onCreate()
